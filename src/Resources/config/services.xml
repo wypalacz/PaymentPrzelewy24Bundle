@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="ticket_swap_payment_przelewy24.controller.notification.class">TicketSwap\PaymentPrzelewy24Bundle\Controller\NotificationController</parameter>
+        <parameter key="ticket_swap_payment_przelewy24.gateway.class">Omnipay\Przelewy24\Gateway</parameter>
+        <parameter key="ticket_swap_payment_przelewy24.form.default_type.class">TicketSwap\PaymentPrzelewy24Bundle\Form\DefaultType</parameter>
+        <parameter key="ticket_swap_payment_przelewy24.plugin.default.class">TicketSwap\PaymentPrzelewy24Bundle\Plugin\DefaultPlugin</parameter>
+        <parameter key="ticket_swap_payment_przelewy24.merchant_id" />
+        <parameter key="ticket_swap_payment_przelewy24.pos_id" />
+        <parameter key="ticket_swap_payment_przelewy24.crc" />
+        <parameter key="ticket_swap_payment_przelewy24.test" />
+        <parameter key="ticket_swap_payment_przelewy24.report_url" />
+    </parameters>
+
+    <services>
+        <service id="ticket_swap_payment_przelewy24.controller.notification" class="%ticket_swap_payment_przelewy24.controller.notification.class%">
+            <argument type="service" id="payment.plugin_controller" />
+            <argument type="service" id="doctrine.orm.default_entity_manager" />
+            <argument>%ticket_swap_payment_przelewy24.crc%</argument>
+            <call method="setLogger">
+                <argument type="service" id="monolog.logger.ticket_swap_payment_przelewy24" />
+            </call>
+        </service>
+
+        <service id="ticket_swap_payment_przelewy24.gateway" class="%ticket_swap_payment_przelewy24.gateway.class%">
+            <argument>null</argument>
+            <argument type="service" id="request" on-invalid="null" strict="false" />
+            <call method="setMerchantId">
+                <argument>%ticket_swap_payment_przelewy24.merchant_id%</argument>
+            </call>
+            <call method="setPosId">
+                <argument>%ticket_swap_payment_przelewy24.pos_id%</argument>
+            </call>
+            <call method="setCrc">
+                <argument>%ticket_swap_payment_przelewy24.crc%</argument>
+            </call>
+            <call method="setTestMode">
+                <argument>%ticket_swap_payment_przelewy24.test%</argument>
+            </call>
+        </service>
+
+        <service id="ticket_swap_payment_przelewy24.plugin.default" class="%ticket_swap_payment_przelewy24.plugin.default.class%">
+            <argument type="service" id="ticket_swap_payment_przelewy24.gateway" />
+            <argument>%ticket_swap_payment_przelewy24.report_url%</argument>
+            <call method="setLogger">
+                <argument type="service" id="monolog.logger.ticket_swap_payment_przelewy24" />
+            </call>
+            <tag name="payment.plugin" />
+        </service>
+
+        <service id="ticket_swap_payment_przelewy24.form.default_type" class="%ticket_swap_payment_przelewy24.form.default_type.class%">
+            <argument type="string">przewely24_checkout</argument>
+            <tag name="payment.method_form_type" />
+            <tag name="form.type" alias="przewely24_checkout" />
+        </service>
+
+        <service id="monolog.logger.ticket_swap_payment_przelewy24" parent="monolog.logger_prototype">
+            <argument index="0">ticket_swap_payment_przelewy24</argument>
+        </service>
+    </services>
+</container>
