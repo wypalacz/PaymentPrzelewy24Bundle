@@ -34,8 +34,10 @@ class TicketSwapPaymentPrzelewy24Extension extends Extension
         /**
          * When logging is disabled, remove logger and setLogger calls
          */
-        if(false === $config['logger']) {
-            $container->getDefinition('ticket_swap_payment_przelewy24.controller.notification')->removeMethodCall('setLogger');
+        if (false === $config['logger']) {
+            $container
+                ->getDefinition('ticket_swap_payment_przelewy24.controller.notification')
+                ->removeMethodCall('setLogger');
             $container->getDefinition('ticket_swap_payment_przelewy24.plugin.default')->removeMethodCall('setLogger');
             $container->removeDefinition('monolog.logger.ticket_swap_payment_przelewy24');
         }

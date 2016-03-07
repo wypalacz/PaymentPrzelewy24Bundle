@@ -120,8 +120,20 @@ class NotificationController
 
             if (PaymentInterface::STATE_APPROVING !== $payment->getState()) {
                 if ($this->logger) {
-                    $states = array(null, 'STATE_APPROVED', 'STATE_APPROVING', 'STATE_CANCELED' , 'STATE_EXPIRED', 'STATE_FAILED' , 'STATE_NEW', 'STATE_DEPOSITING', 'STATE_DEPOSITED');
-                    $this->logger->error('Payment state is not STATE_APPROVING but  -> ' . $states[$payment->getState()]);
+                    $states = array(
+                        null,
+                        'STATE_APPROVED',
+                        'STATE_APPROVING',
+                        'STATE_CANCELED',
+                        'STATE_EXPIRED',
+                        'STATE_FAILED',
+                        'STATE_NEW',
+                        'STATE_DEPOSITING',
+                        'STATE_DEPOSITED'
+                    );
+                    $this
+                        ->logger
+                        ->error('Payment state is not STATE_APPROVING but  -> ' . $states[$payment->getState()]);
                 }
 
                 return new Response('[failed]', 500);

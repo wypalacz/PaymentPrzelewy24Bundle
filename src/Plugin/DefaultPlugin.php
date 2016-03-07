@@ -237,7 +237,9 @@ class DefaultPlugin extends AbstractPlugin
             ),
             'amount'        => $payment->getTargetAmount(),
             'currency'      => $paymentInstruction->getCurrency(),
-            'description'   => $data->has('description') ? $data->get('description') : 'Transaction ' . $payment->getId(),
+            'description'   => $data->has('description') ?
+                $data->get('description') :
+                'Transaction ' . $payment->getId(),
             'card'          => $card,
             'notifyUrl'     => $this->reportUrl,
             'cancelUrl'     => $data->get('cancel_url'),
