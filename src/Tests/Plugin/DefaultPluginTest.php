@@ -362,7 +362,7 @@ class DefaultPluginTest extends \PHPUnit_Framework_TestCase
             ->method('getRedirectUrl')
             ->willReturn($redirectUrl);
 
-        $this->expectException(ActionRequiredException::class);
+        $this->setExpectedException(ActionRequiredException::class);
 
         $this->defaultPlugin->approveAndDeposit($transaction, true);
     }
