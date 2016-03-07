@@ -5,10 +5,9 @@ namespace TicketSwap\Payment\Przelewy24Bundle\Tests\Controller;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
 use JMS\Payment\CoreBundle\Entity\FinancialTransaction;
-use JMS\Payment\CoreBundle\Model\FinancialTransactionInterface;
 use JMS\Payment\CoreBundle\Model\PaymentInstructionInterface;
 use JMS\Payment\CoreBundle\Model\PaymentInterface;
-use JMS\Payment\CoreBundle\PluginController\PluginController;
+use JMS\Payment\CoreBundle\PluginController\PluginControllerInterface;
 use JMS\Payment\CoreBundle\PluginController\Result;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,7 +20,7 @@ use TicketSwap\Payment\Przelewy24Bundle\Controller\NotificationController;
 class NotificationControllerTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \PHPUnit_Framework_MockObject_MockObject|PluginController
+     * @var \PHPUnit_Framework_MockObject_MockObject|PluginControllerInterface
      */
     private $pluginController;
 
@@ -541,11 +540,11 @@ class NotificationControllerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|PluginController
+     * @return \PHPUnit_Framework_MockObject_MockObject|PluginControllerInterface
      */
     private function createPluginControllerMock()
     {
-        return $this->getMockBuilder(PluginController::class)
+        return $this->getMockBuilder(PluginControllerInterface::class)
             ->disableOriginalConstructor()
             ->getMock();
     }

@@ -5,7 +5,7 @@ namespace TicketSwap\Payment\Przelewy24Bundle\Controller;
 use Doctrine\ORM\EntityManager;
 use JMS\Payment\CoreBundle\Entity\FinancialTransaction;
 use JMS\Payment\CoreBundle\Model\PaymentInterface;
-use JMS\Payment\CoreBundle\PluginController\PluginController;
+use JMS\Payment\CoreBundle\PluginController\PluginControllerInterface;
 use JMS\Payment\CoreBundle\PluginController\Result;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,17 +18,17 @@ use TicketSwap\Payment\Przelewy24Bundle\Helper\SessionIdHelper;
 class NotificationController
 {
     /**
-     * @var \JMS\Payment\CoreBundle\PluginController\PluginController
+     * @var PluginControllerInterface
      */
     protected $pluginController;
 
     /**
-     * @var \Doctrine\ORM\EntityManager
+     * @var EntityManager
      */
     protected $entityManager;
 
     /**
-     * @var \Psr\Log\LoggerInterface
+     * @var LoggerInterface
      */
     protected $logger;
 
@@ -38,11 +38,11 @@ class NotificationController
     private $crc;
 
     /**
-     * @param PluginController $pluginController
+     * @param PluginControllerInterface $pluginController
      * @param EntityManager $entityManager
      * @param string $crc
      */
-    public function __construct(PluginController $pluginController, EntityManager $entityManager, $crc)
+    public function __construct(PluginControllerInterface $pluginController, EntityManager $entityManager, $crc)
     {
         $this->pluginController = $pluginController;
         $this->entityManager = $entityManager;
