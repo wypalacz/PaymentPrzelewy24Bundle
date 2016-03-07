@@ -2,7 +2,6 @@
 
 namespace TicketSwap\Payment\Przelewy24Bundle\Controller;
 
-use AppBundle\Tests\Dummy;
 use Doctrine\ORM\EntityManager;
 use JMS\Payment\CoreBundle\Entity\FinancialTransaction;
 use JMS\Payment\CoreBundle\Model\PaymentInterface;
