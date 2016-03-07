@@ -3,6 +3,8 @@ TicketSwapPaymentPrzelewy24Bundle
 
 A Symfony2 Bundle that provides access to the [Przelewy24](http://www.przelewy24.pl/en) API. Based on JMSPaymentCoreBundle.
 
+[![Build Status](https://travis-ci.org/TicketSwap/PaymentPrzelewy24Bundle.svg?branch=master)](https://travis-ci.org/TicketSwap/PaymentPrzelewy24Bundle)
+
 ## Installation
 
 ### Step1: Require the package with Composer
