@@ -1,6 +1,6 @@
 <?php
 
-namespace TicketSwap\PaymentPrzelewy24Bundle\Controller;
+namespace TicketSwap\Payment\Przelewy24Bundle\Controller;
 
 use AppBundle\Tests\Dummy;
 use Doctrine\ORM\EntityManager;
@@ -11,7 +11,7 @@ use JMS\Payment\CoreBundle\PluginController\Result;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use TicketSwap\PaymentPrzelewy24Bundle\Helper\SessionIdHelper;
+use TicketSwap\Payment\Przelewy24Bundle\Helper\SessionIdHelper;
 
 /**
  * Webhook controller for Przewely24. After a payment is done, this webhook is called as a request for verification.

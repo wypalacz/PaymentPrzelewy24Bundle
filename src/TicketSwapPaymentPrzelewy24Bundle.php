@@ -1,6 +1,6 @@
 <?php
 
-namespace TicketSwap\PaymentPrzelewy24Bundle;
+namespace TicketSwap\Payment\Przelewy24Bundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

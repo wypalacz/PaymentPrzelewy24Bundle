@@ -1,6 +1,6 @@
 <?php
 
-namespace TicketSwap\PaymentPrzelewy24Bundle\Plugin;
+namespace TicketSwap\Payment\Przelewy24Bundle\Plugin;
 
 use JMS\Payment\CoreBundle\Model\FinancialTransactionInterface;
 use JMS\Payment\CoreBundle\Model\PaymentInterface;
@@ -13,7 +13,7 @@ use JMS\Payment\CoreBundle\Plugin\PluginInterface;
 use Omnipay\Common\CreditCard;
 use Psr\Log\LoggerInterface;
 use Omnipay\Przelewy24\Gateway;
-use TicketSwap\PaymentPrzelewy24Bundle\Helper\SessionIdHelper;
+use TicketSwap\Payment\Przelewy24Bundle\Helper\SessionIdHelper;
 
 /**
  * JMSPayment plugin to process Przewely24 payments.

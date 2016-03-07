@@ -1,6 +1,6 @@
 <?php
 
-namespace TicketSwap\PaymentPrzelewy24Bundle\DependencyInjection;
+namespace TicketSwap\Payment\Przelewy24Bundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;

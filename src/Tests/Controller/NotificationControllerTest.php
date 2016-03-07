@@ -1,6 +1,6 @@
 <?php
 
-namespace TicketSwap\PaymentPrzelewy24Bundle\Tests\Controller;
+namespace TicketSwap\Payment\Przelewy24Bundle\Tests\Controller;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
@@ -12,10 +12,10 @@ use JMS\Payment\CoreBundle\PluginController\PluginController;
 use JMS\Payment\CoreBundle\PluginController\Result;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
-use TicketSwap\PaymentPrzelewy24Bundle\Controller\NotificationController;
+use TicketSwap\Payment\Przelewy24Bundle\Controller\NotificationController;
 
 /**
- * @covers \TicketSwap\PaymentPrzelewy24Bundle\Controller\NotificationController
+ * @covers \TicketSwap\Payment\Przelewy24Bundle\Controller\NotificationController
  * @group FullCoverage
  */
 class NotificationControllerTest extends \PHPUnit_Framework_TestCase

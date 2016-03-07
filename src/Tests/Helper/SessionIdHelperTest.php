@@ -1,11 +1,11 @@
 <?php
 
-namespace TicketSwap\PaymentPrzelewy24Bundle\Tests\Helper;
+namespace TicketSwap\Payment\Przelewy24Bundle\Tests\Helper;
 
-use TicketSwap\PaymentPrzelewy24Bundle\Helper\SessionIdHelper;
+use TicketSwap\Payment\Przelewy24Bundle\Helper\SessionIdHelper;
 
 /**
- * @covers \TicketSwap\PaymentPrzelewy24Bundle\Helper\SessionIdHelper
+ * @covers \TicketSwap\Payment\Przelewy24Bundle\Helper\SessionIdHelper
  * @group FullCoverage
  */
 class SessionIdHelperTest extends \PHPUnit_Framework_TestCase

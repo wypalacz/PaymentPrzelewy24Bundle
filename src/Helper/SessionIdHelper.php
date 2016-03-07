@@ -1,6 +1,6 @@
 <?php
 
-namespace TicketSwap\PaymentPrzelewy24Bundle\Helper;
+namespace TicketSwap\Payment\Przelewy24Bundle\Helper;
 
 /**
  * Helper to work with session identifiers, which must be unique to Przelewy24.

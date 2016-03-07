@@ -1,6 +1,6 @@
 <?php
 
-namespace TicketSwap\PaymentPrzelewy24Bundle\Form;
+namespace TicketSwap\Payment\Przelewy24Bundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace TicketSwap\PaymentPrzelewy24Bundle\Tests\Plugin;
+namespace TicketSwap\Payment\Przelewy24Bundle\Tests\Plugin;
 
 use JMS\Payment\CoreBundle\Entity\FinancialTransaction;
 use JMS\Payment\CoreBundle\Model\ExtendedDataInterface;
@@ -15,10 +15,10 @@ use Omnipay\Przelewy24\Message\CompletePurchaseResponse;
 use Omnipay\Przelewy24\Message\PurchaseRequest;
 use Omnipay\Przelewy24\Message\PurchaseResponse;
 use Psr\Log\LoggerInterface;
-use TicketSwap\PaymentPrzelewy24Bundle\Plugin\DefaultPlugin;
+use TicketSwap\Payment\Przelewy24Bundle\Plugin\DefaultPlugin;
 
 /**
- * @covers \TicketSwap\PaymentPrzelewy24Bundle\Plugin\DefaultPlugin
+ * @covers \TicketSwap\Payment\Przelewy24Bundle\Plugin\DefaultPlugin
  * @group FullCoverage
  */
 class DefaultPluginTest extends \PHPUnit_Framework_TestCase
