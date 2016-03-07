@@ -13,7 +13,7 @@ class SessionIdHelper
      *
      * @return string
      */
-    public static function generateSessionIdFromTrackingId(string $trackingId, \DateTime $transactionDate) : string
+    public static function generateSessionIdFromTrackingId($trackingId, \DateTime $transactionDate)
     {
         return sprintf(
             '%s-%s',
@@ -27,7 +27,7 @@ class SessionIdHelper
      *
      * @return string
      */
-    public static function getTrackingIdFromSessionId(string $sessionId) : string
+    public static function getTrackingIdFromSessionId($sessionId)
     {
         return substr(
             $sessionId,
