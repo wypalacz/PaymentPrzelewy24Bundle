@@ -388,7 +388,7 @@ class DefaultPluginTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      * @expectedException \JMS\Payment\CoreBundle\Plugin\Exception\BlockedException
-     * @expectedExceptionMessage Waiting for notification from Przewely24.
+     * @expectedExceptionMessage Waiting for notification from Przelewy24.
      */
     public function it_should_block_without_a_reference_number()
     {

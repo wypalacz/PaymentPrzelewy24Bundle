@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 use TicketSwap\Payment\Przelewy24Bundle\Helper\SessionIdHelper;
 
 /**
- * Webhook controller for Przewely24. After a payment is done, this webhook is called as a request for verification.
+ * Webhook controller for Przelewy24. After a payment is done, this webhook is called as a request for verification.
  */
 class NotificationController
 {
@@ -69,7 +69,7 @@ class NotificationController
 
         if (false === $request->request->has('p24_session_id')) {
             if ($this->logger) {
-                $this->logger->error('Przewely24 webhook called without p24_session_id');
+                $this->logger->error('Przelewy24 webhook called without p24_session_id');
             }
 
             return new Response('Failed: No session id', 400);

@@ -53,9 +53,9 @@
         </service>
 
         <service id="ticket_swap_payment_przelewy24.form.default_type" class="%ticket_swap_payment_przelewy24.form.default_type.class%">
-            <argument type="string">przewely24_checkout</argument>
+            <argument type="string">przelewy24_checkout</argument>
             <tag name="payment.method_form_type" />
-            <tag name="form.type" alias="przewely24_checkout" />
+            <tag name="form.type" alias="przelewy24_checkout" />
         </service>
 
         <service id="monolog.logger.ticket_swap_payment_przelewy24" parent="monolog.logger_prototype">

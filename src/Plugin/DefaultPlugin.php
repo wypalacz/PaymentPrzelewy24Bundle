@@ -16,7 +16,7 @@ use Omnipay\Przelewy24\Gateway;
 use TicketSwap\Payment\Przelewy24Bundle\Helper\SessionIdHelper;
 
 /**
- * JMSPayment plugin to process Przewely24 payments.
+ * JMSPayment plugin to process Przelewy24 payments.
  */
 class DefaultPlugin extends AbstractPlugin
 {
@@ -66,7 +66,7 @@ class DefaultPlugin extends AbstractPlugin
      */
     public function processes($paymentSystemName)
     {
-        return 'przewely24_checkout' === $paymentSystemName;
+        return 'przelewy24_checkout' === $paymentSystemName;
     }
 
     /**
@@ -92,12 +92,12 @@ class DefaultPlugin extends AbstractPlugin
         if (null === $referenceNumber) {
             if ($this->logger) {
                 $this->logger->info(sprintf(
-                    'Waiting for notification from Przewely24 for transaction "%s".',
+                    'Waiting for notification from Przelewy24 for transaction "%s".',
                     $transaction->getTrackingId()
                 ));
             }
 
-            throw new BlockedException('Waiting for notification from Przewely24.');
+            throw new BlockedException('Waiting for notification from Przelewy24.');
         }
 
         /**
@@ -189,7 +189,7 @@ class DefaultPlugin extends AbstractPlugin
             throw $ex;
         }
 
-        $actionRequest = new ActionRequiredException('Redirect the user to Przewely24.');
+        $actionRequest = new ActionRequiredException('Redirect the user to Przelewy24.');
         $actionRequest->setFinancialTransaction($transaction);
         $actionRequest->setAction(new VisitUrl($url));
 
