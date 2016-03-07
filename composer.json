@@ -1,0 +1,30 @@
+{
+  "name": "ticketswap/payment-przelewy24-bundle",
+  "type": "symfony-bundle",
+  "description": "A Symfony2 Bundle that provides access to the Przelewy24 API. Based on JMSPaymentCoreBundle.",
+  "keywords": ["payment", "przelewy24"],
+  "homepage": "https://github.com/TicketSwap/PaymentPrzelewy24Bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "TicketSwap",
+      "email": "info@ticketswap.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "http://github.com/TicketSwap/omnipay-przelewy24"
+    }
+  ],
+  "require": {
+    "php": "^5.3.2|^7.0",
+    "symfony/framework-bundle": "~2.0 || ~3.0",
+    "jms/payment-core-bundle": "~1.0",
+    "psr/log": "~1.0",
+    "ticketswap/omnipay-przelewy24": "dev-master"
+  },
+  "autoload": {
+    "psr-4": { "TicketSwap\\Payment\\Przelewy24Bundle\\": "src" }
+  }
+}
