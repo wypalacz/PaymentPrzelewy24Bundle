@@ -13,6 +13,7 @@ use JMS\Payment\CoreBundle\Plugin\PluginInterface;
 use Omnipay\Common\CreditCard;
 use Psr\Log\LoggerInterface;
 use Omnipay\Przelewy24\Gateway;
+use TicketSwap\Payment\Przelewy24Bundle\Form\DefaultType;
 use TicketSwap\Payment\Przelewy24Bundle\Helper\SessionIdHelper;
 
 /**
@@ -66,7 +67,7 @@ class DefaultPlugin extends AbstractPlugin
      */
     public function processes($paymentSystemName)
     {
-        return 'przelewy24_checkout' === $paymentSystemName;
+        return DefaultType::class === $paymentSystemName;
     }
 
     /**
