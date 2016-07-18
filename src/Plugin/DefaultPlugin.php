@@ -67,7 +67,7 @@ class DefaultPlugin extends AbstractPlugin
      */
     public function processes($paymentSystemName)
     {
-        return DefaultType::class === $paymentSystemName;
+        return 'przelewy24_checkout' === $paymentSystemName || DefaultType::class === $paymentSystemName;
     }
 
     /**
