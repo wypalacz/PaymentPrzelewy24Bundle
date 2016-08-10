@@ -23,7 +23,7 @@
     "jms/payment-core-bundle": "~1.0",
     "psr/log": "~1.0",
     "doctrine/orm": "~2.5",
-    "ticketswap/omnipay-przelewy24": "dev-master"
+    "ticketswap/omnipay-przelewy24": "~1.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^4.8",
