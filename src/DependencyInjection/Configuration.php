@@ -39,6 +39,10 @@ class Configuration implements ConfigurationInterface
                 ->booleanNode('logger')
                     ->defaultTrue()
                 ->end()
+                ->integerNode('channel')
+                    ->treatNullLike(63)
+                    ->defaultValue(63)
+                ->end()
             ->end()
         ;
 
