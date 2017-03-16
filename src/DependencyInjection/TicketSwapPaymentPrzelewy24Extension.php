@@ -30,6 +30,7 @@ class TicketSwapPaymentPrzelewy24Extension extends Extension
         $container->setParameter('ticket_swap_payment_przelewy24.crc', $config['crc']);
         $container->setParameter('ticket_swap_payment_przelewy24.test', $config['test']);
         $container->setParameter('ticket_swap_payment_przelewy24.report_url', $config['report_url']);
+        $container->setParameter('ticket_swap_payment_przelewy24.channel', $config['channel']);
 
         /**
          * When logging is disabled, remove logger and setLogger calls

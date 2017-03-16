@@ -49,7 +49,11 @@ ticket_swap_payment_przelewy24:
     crc:         Your CRC key
     test:        true/false   # Default true
     report_url:  https://host/webhook/przelewy24
+    channel:     1 # Default 63
 ```
+
+The 'channel' field is optional and is must be the sum of the values specified in the [przelewy24 documentation](http://www.przelewy24.pl/eng/storage/app/media/pobierz/Instalacja/przelewy24_specification.pdf)
+for the parameter 'p24_channel'. Default value will be 63 (which enables all the payment channels).
 
 Make sure you set the `return_url` in the `predefined_data` for every payment method you enable:
 ````php

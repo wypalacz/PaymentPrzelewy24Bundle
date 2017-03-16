@@ -14,6 +14,7 @@
         <parameter key="ticket_swap_payment_przelewy24.crc" />
         <parameter key="ticket_swap_payment_przelewy24.test" />
         <parameter key="ticket_swap_payment_przelewy24.report_url" />
+        <parameter key="ticket_swap_payment_przelewy24.channel" />
     </parameters>
 
     <services>
@@ -40,6 +41,9 @@
             </call>
             <call method="setTestMode">
                 <argument>%ticket_swap_payment_przelewy24.test%</argument>
+            </call>
+            <call method="setChannel">
+                <argument>%ticket_swap_payment_przelewy24.channel%</argument>
             </call>
         </service>
 
