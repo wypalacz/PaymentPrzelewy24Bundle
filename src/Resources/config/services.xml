@@ -28,8 +28,6 @@
         </service>
 
         <service id="ticket_swap_payment_przelewy24.gateway" class="%ticket_swap_payment_przelewy24.gateway.class%">
-            <argument>null</argument>
-            <argument type="service" id="request" on-invalid="null" strict="false" />
             <call method="setMerchantId">
                 <argument>%ticket_swap_payment_przelewy24.merchant_id%</argument>
             </call>
